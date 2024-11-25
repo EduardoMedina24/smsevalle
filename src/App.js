@@ -7,7 +7,8 @@ const App = () => {
         <h1>BIENVENIDOS A SMSEVALLE</h1>
       </header>
       <main>
-        <p>Sistema de </p>
+        <p>Sistema Monitoreo, Seguimiento y Evaluaci ́on
+        de las políticas</p>
       </main>
     </div>
   );
