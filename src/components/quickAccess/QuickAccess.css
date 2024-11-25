@@ -1,0 +1,36 @@
+/* src/components/quickAccess/QuickAccess.css */
+.quick-access {
+    padding: 20px;
+    text-align: center;
+}
+
+.icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.icon-card {
+    cursor: pointer;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    width: 100px;
+    transition: transform 0.2s;
+}
+
+.icon-card:hover {
+    transform: scale(1.1);
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.icon-card p {
+    margin-top: 10px;
+    font-size: 14px;
+}
