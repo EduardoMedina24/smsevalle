@@ -1,36 +1,46 @@
-// src/components/quickAccess/QuickAccess.js
 import React from 'react';
-import './QuickAccess.css';
+import { Grid, Card, CardContent, Typography, Box } from '@mui/material';
 
 const QuickAccess = () => {
-const areas = [
+  const areas = [
     { name: 'Primera Infancia', icon: '👶' },
     { name: 'Adolescencia', icon: '🧒' },
     { name: 'Juventudes', icon: '🧑' },
     { name: 'Vejez', icon: '👴' },
-];
+  ];
 
-const handleAccess = (areaName) => {
+  const handleAccess = (areaName) => {
     alert(`Accediendo a la sección: ${areaName}`);
-};
+  };
 
-return (
-    <div className="quick-access">
-    <h2>Áreas de Monitoreo</h2>
-    <div className="icons-container">
+  return (
+    <Box sx={{ marginTop: 4 }}>
+      <Typography variant="h5" gutterBottom>
+        Áreas de Monitoreo
+      </Typography>
+      <Grid container spacing={2}>
         {areas.map((area, index) => (
-        <div
-            key={index}
-            className="icon-card"
-            onClick={() => handleAccess(area.name)}
-        >
-            <span className="icon">{area.icon}</span>
-            <p>{area.name}</p>
-        </div>
+          <Grid item xs={12} sm={6} md={3} key={index}>
+            <Card
+              sx={{
+                textAlign: 'center',
+                cursor: 'pointer',
+                '&:hover': {
+                  boxShadow: 6,
+                },
+              }}
+              onClick={() => handleAccess(area.name)}
+            >
+              <CardContent>
+                <Typography variant="h3">{area.icon}</Typography>
+                <Typography variant="h6">{area.name}</Typography>
+              </CardContent>
+            </Card>
+          </Grid>
         ))}
-    </div>
-    </div>
-);
+      </Grid>
+    </Box>
+  );
 };
 
 export default QuickAccess;

@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
-import './ReportGenerator.css';
+import {
+  Typography,
+  Box,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Button,
+  Paper,
+} from '@mui/material';
 
 const ReportGenerator = () => {
   const [reportData, setReportData] = useState([
@@ -21,35 +32,43 @@ const ReportGenerator = () => {
   };
 
   return (
-    <div className="report-generator">
-      <h2>Generación de Informes</h2>
-      <div id="report-content" className="report-content">
-        <h3>Datos del Informe</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Política</th>
-              <th>Indicador</th>
-              <th>Impacto</th>
-            </tr>
-          </thead>
-          <tbody>
-            {reportData.map((data) => (
-              <tr key={data.id}>
-                <td>{data.id}</td>
-                <td>{data.policy}</td>
-                <td>{data.indicator}</td>
-                <td>{data.impact}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <button onClick={handleGenerateReport} className="generate-button">
+    <Box sx={{ marginTop: 4 }}>
+      <Typography variant="h5" gutterBottom>
+        Generación de Informes
+      </Typography>
+      <Paper id="report-content" sx={{ padding: 2, marginBottom: 2 }}>
+        <Typography variant="h6">Datos del Informe</Typography>
+        <TableContainer>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>ID</TableCell>
+                <TableCell>Política</TableCell>
+                <TableCell>Indicador</TableCell>
+                <TableCell>Impacto</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {reportData.map((data) => (
+                <TableRow key={data.id}>
+                  <TableCell>{data.id}</TableCell>
+                  <TableCell>{data.policy}</TableCell>
+                  <TableCell>{data.indicator}</TableCell>
+                  <TableCell>{data.impact}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Paper>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={handleGenerateReport}
+      >
         Generar Informe PDF
-      </button>
-    </div>
+      </Button>
+    </Box>
   );
 };
 

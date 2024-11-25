@@ -1,32 +1,23 @@
-// src/components/Navbar.js
 import React from 'react';
-import './Navbar.css';
+import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 
 const Navbar = () => {
-return (
-    <nav className="navbar">
-    <div className="navbar-logo">
-        <img src="/assets/logo.png" alt="Logo" />
-        <span>Policy Monitoring</span>
-    </div>
-    <ul className="navbar-menu">
-        <li><a href="/">Inicio</a></li>
-        <li>
-        <a href="/policies">Políticas</a>
-        <ul className="submenu">
-            <li><a href="/policies/infancia">Infancia</a></li>
-            <li><a href="/policies/adolescencia">Adolescencia</a></li>
-            <li><a href="/policies/vejez">Vejez</a></li>
-            <li><a href="/policies/juventudes">Juventudes</a></li>
-        </ul>
-        </li>
-        <li><a href="/indicators">Indicadores</a></li>
-        <li><a href="/reports">Informes</a></li>
-        <li><a href="/participation">Participación Ciudadana</a></li>
-        <li><a href="/accountability">Rendición de Cuentas</a></li>
-    </ul>
-    </nav>
-);
+  return (
+    <AppBar position="static" color="primary">
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          SMSEVALLE
+        </Typography>
+        <Box>
+          <Button color="inherit">Inicio</Button>
+          <Button color="inherit">Políticas</Button>
+          <Button color="inherit">Indicadores</Button>
+          <Button color="inherit">Informes</Button>
+          <Button color="inherit">Participación</Button>
+        </Box>
+      </Toolbar>
+    </AppBar>
+  );
 };
 
 export default Navbar;
