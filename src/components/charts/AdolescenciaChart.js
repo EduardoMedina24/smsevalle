@@ -4,7 +4,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-const InfanciaChart = () => {
+const AdolescenciaChart = () => {
   const [chartData, setChartData] = useState({
     labels: [],
     datasets: [
@@ -26,11 +26,10 @@ const InfanciaChart = () => {
   });
 
   useEffect(() => {
-    // Realizar la solicitud para obtener los datos desde la API
-    fetch('http://localhost:5000/api/infancia')
+    // Realizar la solicitud para obtener los datos de adolescencia desde la API
+    fetch('http://localhost:5000/api/juventud')
       .then(response => response.json())
       .then(data => {
-        // Pasar solo el número de la meta (1, 2, 3, etc.)
         const labels = data.map((_, index) => index + 1); // Solo el número de la meta
         const valorEsperado = data.map(item => item.valorEsperado);
         const valorAlcanzado = data.map(item => item.valorAlcanzado);
@@ -67,7 +66,7 @@ const InfanciaChart = () => {
           plugins: {
             title: {
               display: true,
-              text: 'Progreso de las Políticas de Primera Infancia'
+              text: 'Progreso de las Políticas de Adolescencia'
             },
             legend: {
               position: 'top',
@@ -79,4 +78,4 @@ const InfanciaChart = () => {
   );
 };
 
-export default InfanciaChart;
+export default AdolescenciaChart;

@@ -3,7 +3,11 @@ import { CssBaseline, Typography, Container } from '@mui/material';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbars/Navbar';
 import QuickAccess from './components/quickAccess/QuickAccess';
-import InfanciaPage from './pages/InfanciaPage'; // Página para mostrar la InfanciaChart
+import InfanciaPage from './pages/InfanciaPage';
+import AccionComunalPage from './pages/AccionComunalPage';
+import VejezPage from './pages/VejezPage';
+
+import AdolescenciaPage from './pages/AdolescenciaPage'; // Nueva página
 import ReportGenerator from './components/reports/ReportGenerator';
 
 const App = () => {
@@ -23,9 +27,12 @@ const App = () => {
         <main>
           <Routes>
             <Route path="/" element={<QuickAccess />} />
-            <Route path="/infancia" element={<InfanciaPage />} /> {/* Corregido */}
+            <Route path="/infancia" element={<InfanciaPage />} />
+            <Route path="/adolescencia" element={< AdolescenciaPage/>} />
+            <Route path="/vejez" element={< VejezPage/>} />
+            <Route path="/accioncomunal" element={<AccionComunalPage />} /> 
           </Routes>
-          <ReportGenerator />
+         
         </main>
       </Container>
     </Router>

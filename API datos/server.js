@@ -3,6 +3,7 @@ const mongoose = require('mongoose'); // Librería para conectar con MongoDB
 const cors = require('cors'); // Middleware para habilitar CORS
 const dotenv = require('dotenv'); // Para manejar variables de entorno
 
+
 dotenv.config(); // Carga las variables desde el archivo .env
 
 const app = express(); // Inicializa la aplicación Express

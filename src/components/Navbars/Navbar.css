@@ -7,15 +7,9 @@
     padding: 10px 20px;
 }
 
-.navbar-logo {
-    display: flex;
-    align-items: center;
-}
 
-.navbar-logo img {
-    height: 40px;
-    margin-right: 10px;
-}
+
+
 
 .navbar-menu {
     list-style: none;
