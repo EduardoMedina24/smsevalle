@@ -1,13 +1,14 @@
 import React from 'react';
 import { CssBaseline, Typography, Container } from '@mui/material';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbars/Navbar';
 import QuickAccess from './components/quickAccess/QuickAccess';
-import IndicatorsChart from './components/charts/IndicatorsChart';
+import InfanciaPage from './pages/InfanciaPage'; // Página para mostrar la InfanciaChart
 import ReportGenerator from './components/reports/ReportGenerator';
 
 const App = () => {
   return (
-    <div>
+    <Router>
       <CssBaseline />
       <Navbar />
       <Container>
@@ -20,12 +21,14 @@ const App = () => {
           </Typography>
         </header>
         <main>
-          <QuickAccess />
-          <IndicatorsChart />
+          <Routes>
+            <Route path="/" element={<QuickAccess />} />
+            <Route path="/infancia" element={<InfanciaPage />} /> {/* Corregido */}
+          </Routes>
           <ReportGenerator />
         </main>
       </Container>
-    </div>
+    </Router>
   );
 };
 
