@@ -1,0 +1,6 @@
+/* src/components/charts/IndicatorsChart.css */
+.chart-container {
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+}
