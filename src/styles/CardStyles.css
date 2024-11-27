@@ -1,0 +1,23 @@
+/* src/styles/CardStyles.css */
+.card-interactive {
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Para animaciones suaves */
+}
+
+.card-interactive:hover {
+  box-shadow: 0 4px 8px #aceed633;
+  transform: translateY(-5px); /* Efecto de elevar la tarjeta */
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-description {
+  color: #555;
+}
